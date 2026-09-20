@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor U as User
+    participant EP as Post/CommentEndpoints
+    participant VS as VotingService
+    participant DB as AppDbContext / PostgreSQL
+
+    U->>EP: PUT /api/posts/{id}/vote {value: +1 | -1}
+    EP->>VS: CastVoteAsync(Post, targetId, voterId, value)
+    VS->>DB: look up target's author
+
+    alt voter is the author
+        VS-->>EP: throws SelfVoteException
+        EP-->>U: 400
+    else different user
+        VS->>DB: upsert Vote(TargetType, TargetId, VoterId, Value)
+        VS->>DB: adjust author AppUser.Karma by delta
+        DB-->>VS: saved
+        VS-->>EP: new score
+        EP-->>U: 200 {score, viewerVote}
+    end
+
+    U->>EP: DELETE /api/posts/{id}/vote
+    EP->>VS: RemoveVoteAsync(Post, targetId, voterId)
+    VS->>DB: delete Vote row (no-op if none existed)
+    VS->>DB: reverse the karma delta
+    EP-->>U: 200 {score}

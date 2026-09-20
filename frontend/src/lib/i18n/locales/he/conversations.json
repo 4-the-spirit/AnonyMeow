@@ -1,0 +1,42 @@
+{
+  "message": "הודעה",
+  "startErrorToast": "לא ניתן להתחיל שיחה עם המשתמש הזה.",
+  "composer": {
+    "placeholder": "כתבו הודעה…",
+    "send": "שליחה",
+    "errorToast": "לא ניתן לשלוח את ההודעה."
+  },
+  "page": {
+    "fallbackTitle": "שיחה",
+    "noneYetTitle": "אין עדיין הודעות",
+    "noneYetDescription": "אמרו שלום!"
+  },
+  "list": {
+    "title": "הודעות",
+    "noneYetTitle": "אין עדיין שיחות",
+    "noneYetDescription": "התחילו שיחה מהפרופיל של משתמש אחר.",
+    "actionsLabel": "פעולות שיחה",
+    "pin": "הצמדה",
+    "unpin": "ביטול הצמדה",
+    "pinErrorToast": "לא ניתן לעדכן את מצב ההצמדה.",
+    "delete": "מחיקה",
+    "deleteConfirm": "למחוק את השיחה הזו? היא תיעלם מהרשימה שלכם עד שתגיע הודעה חדשה.",
+    "deleteSuccessToast": "השיחה נמחקה",
+    "deleteErrorToast": "לא ניתן למחוק את השיחה."
+  },
+  "presence": {
+    "online": "מחובר/ת",
+    "lastSeen": "נראה/תה לאחרונה {{time}}",
+    "justNow": "לפני רגע",
+    "neverActive": "עדיין לא היה/תה פעיל/ה"
+  },
+  "reply": {
+    "replyingTo": "משיבים ל-{{username}}",
+    "replyButton": "תגובה",
+    "cancel": "ביטול תגובה",
+    "originalUnavailable": "ההודעה המקורית אינה זמינה"
+  },
+  "block": {
+    "blockedNotice": "חסמתם את המשתמש הזה. בטלו את החסימה כדי לשלוח הודעות."
+  }
+}

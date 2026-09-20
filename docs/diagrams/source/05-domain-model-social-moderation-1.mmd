@@ -1,0 +1,96 @@
+erDiagram
+    AppUser {
+        guid Id PK
+        string Username
+        bool IsPlatformAdmin
+    }
+    Community {
+        guid Id PK
+        string Name
+    }
+    Friendship {
+        guid RequesterId PK
+        guid AddresseeId PK
+        string Status
+    }
+    UserBlock {
+        guid BlockerId PK
+        guid BlockedId PK
+    }
+    Conversation {
+        guid Id PK
+        guid ParticipantAId FK
+        guid ParticipantBId FK
+    }
+    Message {
+        guid Id PK
+        guid ConversationId FK
+        guid SenderId FK
+        guid ReplyToMessageId FK
+        string Body
+        bool IsRemoved
+    }
+    Notification {
+        guid Id PK
+        guid RecipientId FK
+        string Type
+        string SourceType
+        guid SourceId
+        bool IsRead
+    }
+    Report {
+        guid Id PK
+        guid ReporterId FK
+        string TargetType
+        guid TargetId
+        string Status
+        guid ReviewedByModId FK
+    }
+    ModerationAction {
+        guid Id PK
+        guid CommunityId FK
+        guid ModId FK
+        string ActionType
+        guid TargetId
+    }
+    SpamFlag {
+        guid Id PK
+        string TargetType
+        guid TargetId
+        guid AuthorId FK
+        guid ReportId FK
+        string Status
+    }
+    PlatformRestriction {
+        guid Id PK
+        guid AppUserId FK
+        string Type
+        guid IssuedByAdminId FK
+        string Status
+    }
+    PiiDetectionLog {
+        guid Id PK
+        guid UserId FK
+        string DetectorType
+        bool WasBlocked
+    }
+
+    AppUser ||--o{ Friendship : "requests (as requester)"
+    AppUser ||--o{ Friendship : "receives (as addressee)"
+    AppUser ||--o{ UserBlock : "blocks (as blocker)"
+    AppUser ||--o{ UserBlock : "is blocked (as blocked)"
+    AppUser ||--o{ Conversation : "participates (A)"
+    AppUser ||--o{ Conversation : "participates (B)"
+    Conversation ||--o{ Message : contains
+    AppUser ||--o{ Message : sends
+    Message ||--o{ Message : "replies to (self)"
+    AppUser ||--o{ Notification : receives
+    AppUser ||--o{ Report : files
+    AppUser ||--o{ Report : "reviewed by (mod)"
+    Report ||--o{ SpamFlag : "linked from"
+    AppUser ||--o{ SpamFlag : "authored by"
+    Community ||--o{ ModerationAction : "scoped to (nullable = platform-level)"
+    AppUser ||--o{ ModerationAction : performs
+    AppUser ||--o{ PlatformRestriction : "restricted (target)"
+    AppUser ||--o{ PlatformRestriction : "issued by (admin)"
+    AppUser ||--o{ PiiDetectionLog : "flagged for"

@@ -1,0 +1,139 @@
+{
+  "appName": "AnonyMeow",
+  "nav": {
+    "home": "Communities",
+    "communities": "Communities",
+    "myCommunities": "My communities",
+    "suggestedCommunities": "Suggested",
+    "browseAll": "Browse all communities",
+    "newCommunity": "New community",
+    "feed": "Feed",
+    "messages": "Messages",
+    "notifications": "Notifications",
+    "myProfile": "My profile",
+    "editProfile": "Edit profile",
+    "saved": "Saved",
+    "friendRequests": "Friend requests",
+    "platformAdmin": "Platform admin",
+    "switchUserDev": "Switch user (dev)",
+    "toggleSidebar": "Toggle sidebar",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "signOut": "Sign out"
+  },
+  "actions": {
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "delete": "Delete",
+    "edit": "Edit",
+    "retry": "Retry",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "There's nothing here — not even a stray cat.",
+    "backToCommunities": "Back to communities"
+  },
+  "loading": "Loading",
+  "language": "Language",
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "pageOfTotal": "Page {{page}} of {{totalPages}}"
+  },
+  "validation": {
+    "usernameLength": "Username must be 3-20 characters",
+    "usernameFormat": "Lowercase letters, numbers, and underscores only",
+    "communityNameLength": "Community name must be 3-30 characters",
+    "communityNameFormat": "Hebrew letters, numbers, spaces, underscores, and hyphens only",
+    "displayNameRequired": "Display name is required",
+    "messageRequired": "Message cannot be empty",
+    "reasonRequired": "A reason is required",
+    "usernameRequired": "Username is required",
+    "nameRequired": "Name is required",
+    "hexColorFormat": "Enter a hex color like #22C55E",
+    "titleRequired": "Title is required",
+    "pollMinOptions": "Add at least 2 options",
+    "contentRequired": "Add a body, image, or poll.",
+    "tooManyImages": "A post can have at most {{count}} images.",
+    "flairRequired": "Select a tag",
+    "imageRequired": "An image is required",
+    "emailFormat": "Enter a valid email address",
+    "passwordLength": "Password must be 8-256 characters",
+    "passwordComplexity": "Password must include at least 3 of: uppercase letters, lowercase letters, numbers, and symbols",
+    "passwordRequirements": "At least 8 characters, combining at least 3 of: uppercase letters, lowercase letters, numbers, and symbols."
+  },
+  "voting": {
+    "upvote": "Upvote",
+    "downvote": "Downvote",
+    "errorToast": "Could not register your vote."
+  },
+  "imageUpload": {
+    "successToast": "Image uploaded",
+    "errorToastUnavailable": "Image uploads aren’t available yet (storage isn’t configured).",
+    "errorToastFailed": "Image upload failed.",
+    "uploading": "Uploading…",
+    "previewAlt": "Upload preview",
+    "unavailableTitle": "Image uploads aren't available yet",
+    "unavailableDescription": "Azure Blob Storage isn't configured on this backend yet.",
+    "dropzoneCta": "Drag and drop an image, or click to browse",
+    "dropzoneCtaMulti": "Add image ({{count}} left)",
+    "dropzoneHint": "PNG or JPG",
+    "replace": "Replace image"
+  },
+  "authError": {
+    "title": "Couldn't sign you in",
+    "description": "Something went wrong minting a local dev session. Try reloading the page."
+  },
+  "linkWarning": {
+    "title": "Leaving AnonyMeow",
+    "description": "You're about to visit {{hostname}}. Continue?",
+    "continue": "Continue",
+    "cancel": "Cancel"
+  },
+  "markdownEditor": {
+    "bold": "Bold",
+    "italic": "Italic",
+    "link": "Link",
+    "linkTextLabel": "Link text (optional)",
+    "linkTextPlaceholder": "The text to display",
+    "linkUrlLabel": "URL",
+    "linkUrlPlaceholder": "https://…",
+    "linkInsert": "Insert link",
+    "bulletList": "Bulleted list",
+    "numberedList": "Numbered list",
+    "quote": "Quote",
+    "code": "Code",
+    "emoji": "Emoji",
+    "write": "Write",
+    "preview": "Preview",
+    "formatting": "Formatting",
+    "nothingToPreview": "*Nothing to preview*"
+  },
+  "emojiPicker": {
+    "categorySmileys": "Smileys",
+    "categoryGestures": "Gestures",
+    "categoryHearts": "Hearts",
+    "categoryAnimals": "Animals",
+    "categoryFood": "Food",
+    "categorySymbols": "Symbols"
+  },
+  "emoji": {
+    "catFace": "cat face",
+    "thumbsUp": "thumbs up",
+    "thumbsDown": "thumbs down",
+    "redHeart": "red heart",
+    "faceWithTearsOfJoy": "face with tears of joy",
+    "faceWithOpenMouth": "face with open mouth",
+    "cryingFace": "crying face",
+    "fire": "fire"
+  }
+}

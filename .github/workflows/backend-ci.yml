@@ -1,0 +1,35 @@
+name: Backend CI
+
+on:
+  pull_request:
+    paths:
+      - "backend/**"
+  push:
+    branches: [master]
+    paths:
+      - "backend/**"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        working-directory: backend
+        run: dotnet restore "AnonyMeow.sln"
+
+      - name: Build
+        working-directory: backend
+        run: dotnet build "AnonyMeow.sln" --no-restore -c Release
+
+      # AnonyMeow.IntegrationTests uses Testcontainers.PostgreSql to spin up a real
+      # Postgres container (per CLAUDE.md: no in-memory/fake DB provider). ubuntu-latest
+      # runners have Docker preinstalled, so no extra setup is needed here.
+      - name: Test
+        working-directory: backend
+        run: dotnet test "AnonyMeow.sln" --no-build -c Release

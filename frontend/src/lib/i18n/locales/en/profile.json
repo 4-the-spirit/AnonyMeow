@@ -1,0 +1,30 @@
+{
+  "edit": {
+    "title": "Edit profile",
+    "usernamePermanent": "Username {{username}} is permanent and can't be changed.",
+    "shuffleAvatar": "Shuffle avatar",
+    "displayNameLabel": "Display name",
+    "friendListVisibilityLabel": "Friend list visibility",
+    "friendListVisibilityHint": "Who can see your friends list on your profile.",
+    "visibilityEveryone": "Everyone",
+    "visibilityFriendsOnly": "Friends only",
+    "visibilityNoOne": "No one",
+    "saving": "Saving…",
+    "saveChanges": "Save changes",
+    "successToast": "Profile updated",
+    "errorToast": "Could not update your profile."
+  },
+  "tabs": {
+    "posts": "Posts",
+    "comments": "Comments",
+    "communities": "Communities",
+    "friends": "Friends"
+  },
+  "karmaAndJoined": "{{karma}} karma · joined {{date}}",
+  "noPostsYet": "No posts yet",
+  "noCommentsYet": "No comments yet",
+  "noCommunitiesYet": "Not a member of any community yet",
+  "moderatorBadge": "Moderator",
+  "viewInPost": "View in post",
+  "commentMeta": "{{score}} points · {{date}}"
+}

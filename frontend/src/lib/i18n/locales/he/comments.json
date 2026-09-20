@@ -1,0 +1,53 @@
+{
+  "section": {
+    "title": "תגובות",
+    "postLocked": "הפוסט הזה נעול.",
+    "noneYetTitle": "אין עדיין תגובות",
+    "noneYetDescription": "התחילו את הדיון."
+  },
+  "composer": {
+    "replyPlaceholder": "כתבו תגובה…",
+    "newPlaceholder": "הצטרפו לדיון…",
+    "reply": "תגובה",
+    "comment": "תגובה",
+    "cancel": "ביטול",
+    "errorToast": "לא ניתן לפרסם את התגובה שלך.",
+    "signInPrompt": "יש להתחבר כדי להצטרף לדיון."
+  },
+  "item": {
+    "reply": "תגובה",
+    "edit": "עריכה",
+    "edited": "נערך",
+    "delete": "מחיקה",
+    "deleteConfirm": "למחוק את התגובה הזו?",
+    "deleteSuccessToast": "התגובה נמחקה",
+    "deleteErrorToast": "לא ניתן למחוק את התגובה.",
+    "replyCount_one": "{{count}} תגובה",
+    "replyCount_two": "{{count}} תגובות",
+    "replyCount_other": "{{count}} תגובות",
+    "loadingReplies": "טוען תגובות…",
+    "showMoreReplies_one": "הצג עוד {{count}} תגובה",
+    "showMoreReplies_two": "הצג עוד {{count}} תגובות",
+    "showMoreReplies_other": "הצג עוד {{count}} תגובות",
+    "continueThread": "המשך את השרשור",
+    "minimize": "מזעור",
+    "expand": "הרחבה",
+    "minimized": "התגובה ממוזערת",
+    "save": "שמירה",
+    "unsave": "ביטול שמירה",
+    "saveSuccessToast": "התגובה נשמרה",
+    "unsaveSuccessToast": "שמירת התגובה בוטלה",
+    "saveErrorToast": "לא ניתן לשמור את התגובה הזו.",
+    "unsaveErrorToast": "לא ניתן לבטל את שמירת התגובה הזו."
+  },
+  "editForm": {
+    "save": "שמירה",
+    "cancel": "ביטול",
+    "successToast": "התגובה עודכנה",
+    "errorToast": "לא ניתן לעדכן את התגובה."
+  },
+  "thread": {
+    "title": "שרשור",
+    "backToPost": "חזרה אל \"{{title}}\""
+  }
+}

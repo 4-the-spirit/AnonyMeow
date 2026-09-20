@@ -1,0 +1,13 @@
+{
+  "pageTitle": "Trending",
+  "pageTitleCommunity": "Trending in c/{{community}}",
+  "windows": {
+    "day": "Today",
+    "week": "This week"
+  },
+  "emptyTitle": "Nothing trending yet",
+  "emptyDescription": "Check back once there's more activity.",
+  "recommended": {
+    "title": "Recommended communities"
+  }
+}

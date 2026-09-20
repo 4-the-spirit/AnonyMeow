@@ -1,0 +1,32 @@
+{
+  "action": {
+    "friends": "Friends ✓",
+    "accept": "Accept",
+    "decline": "Decline",
+    "cancelRequest": "Cancel request",
+    "addFriend": "Add friend",
+    "removeConfirm": "Remove {{username}} as a friend?",
+    "removeSuccessToast": "Friend removed",
+    "removeErrorToast": "Could not remove this friend.",
+    "sendSuccessToast": "Friend request sent",
+    "sendErrorToast": "Could not send a friend request.",
+    "acceptSuccessToast": "You and {{username}} are now friends",
+    "acceptErrorToast": "Could not accept this request.",
+    "declineSuccessToast": "Friend request declined",
+    "declineErrorToast": "Could not decline this request.",
+    "cancelSuccessToast": "Friend request withdrawn",
+    "cancelErrorToast": "Could not withdraw this request."
+  },
+  "list": {
+    "privateTitle": "This friend list is private",
+    "noneYetTitle": "No friends yet"
+  },
+  "requestsPage": {
+    "title": "Friend requests",
+    "incoming": "Incoming",
+    "outgoing": "Outgoing",
+    "noIncoming": "No incoming requests",
+    "noOutgoing": "No outgoing requests",
+    "cancel": "Cancel"
+  }
+}

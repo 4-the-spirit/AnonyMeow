@@ -1,0 +1,41 @@
+{
+  "pageTitle": "ניהול פלטפורמה",
+  "adminsOnlyTitle": "למנהלי פלטפורמה בלבד",
+  "adminsOnlyDescription": "לחשבון שלכם אין הרשאת ניהול פלטפורמה.",
+  "tabs": {
+    "reports": "דיווחים",
+    "spamFlags": "סימוני ספאם",
+    "restrictions": "הגבלות",
+    "auditLog": "יומן פעולות"
+  },
+  "reports": {
+    "none": "אין דיווחים כאן"
+  },
+  "spamFlags": {
+    "none": "אין סימוני ספאם כאן",
+    "reasonRateLimitExceeded": "חריגה ממגבלת קצב",
+    "reasonDuplicateContent": "תוכן כפול",
+    "reasonLinkSpam": "ספאם קישורים"
+  },
+  "auditLog": {
+    "none": "אין עדיין רשומות ביומן הפעולות"
+  },
+  "restrictions": {
+    "restrictTitle": "הגבלת משתמש",
+    "usernameLabel": "שם משתמש",
+    "usernamePlaceholder": "שם משתמש",
+    "typeLabel": "סוג ההגבלה",
+    "typePostingRestricted": "פרסום מוגבל",
+    "typeFullSuspension": "השעיה מלאה",
+    "reasonLabel": "סיבה",
+    "reasonPlaceholder": "מדוע המשתמש הזה מוגבל?",
+    "endAtLabel": "בתוקף עד (אופציונלי, השאירו ריק להגבלה ללא הגבלת זמן)",
+    "restrictSubmit": "הגבלת משתמש",
+    "restrictSuccessToast": "{{username}} הוגבל",
+    "restrictErrorToast": "לא ניתן להגביל את המשתמש הזה.",
+    "liftTitle": "ביטול הגבלה",
+    "liftSubmit": "ביטול הגבלה",
+    "liftSuccessToast": "ההגבלה על {{username}} בוטלה",
+    "liftErrorToast": "לא ניתן לבטל את ההגבלה של המשתמש הזה."
+  }
+}

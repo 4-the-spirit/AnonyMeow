@@ -1,0 +1,16 @@
+flowchart TB
+    subgraph CommunityScope["Community-scoped — CommunityModerator policy"]
+        CB["CommunityBan<br/>(CommunityId + AppUserId)"]
+        CBEffect["Blocks posting/commenting<br/>ONLY in that community"]
+        CB --> CBEffect
+    end
+
+    subgraph PlatformScope["Platform-scoped — PlatformAdmin policy"]
+        PR["PlatformRestriction<br/>(AppUserId only;<br/>Type: PostingRestricted | FullSuspension)"]
+        PREffect["Blocks posting/commenting EVERYWHERE<br/>while Status=Active and<br/>(EndAtUtc empty OR in the future)"]
+        PR --> PREffect
+    end
+
+    CB --> MA["ModerationAction audit row<br/>(CommunityId set = community-scoped)"]
+    PR --> MA2["ModerationAction audit row<br/>(CommunityId null = platform-scoped)"]
+    MA & MA2 --> Audit["PlatformAdminService.ListAuditLogAsync<br/>GET /api/admin/audit-log — unified view"]

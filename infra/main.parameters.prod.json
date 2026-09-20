@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": { "value": "prod" },
+    "projectName": { "value": "anonymeow" },
+    "staticWebAppLocation": { "value": "eastus2" },
+    "postgresAdminUsername": { "value": "anonymeowadmin" },
+    "appServicePlanSkuName": { "value": "B1" },
+    "appServicePlanSkuTier": { "value": "Basic" },
+    "postgresSkuName": { "value": "Standard_B1ms" },
+    "postgresSkuTier": { "value": "Burstable" },
+    "blobContainerName": { "value": "post-images" },
+    "deployApplicationInsights": { "value": true },
+    "corsFrontendOriginOverride": { "value": "https://anonymeow.com" }
+  }
+}

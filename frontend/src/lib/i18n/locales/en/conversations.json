@@ -1,0 +1,42 @@
+{
+  "message": "Message",
+  "startErrorToast": "Could not start a conversation with this user.",
+  "composer": {
+    "placeholder": "Write a message…",
+    "send": "Send",
+    "errorToast": "Could not send message."
+  },
+  "page": {
+    "fallbackTitle": "Conversation",
+    "noneYetTitle": "No messages yet",
+    "noneYetDescription": "Say hello!"
+  },
+  "list": {
+    "title": "Messages",
+    "noneYetTitle": "No conversations yet",
+    "noneYetDescription": "Start one from another user's profile.",
+    "actionsLabel": "Conversation actions",
+    "pin": "Pin",
+    "unpin": "Unpin",
+    "pinErrorToast": "Could not update pin status.",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this conversation? It'll disappear from your list until a new message arrives.",
+    "deleteSuccessToast": "Conversation deleted",
+    "deleteErrorToast": "Could not delete the conversation."
+  },
+  "presence": {
+    "online": "Online",
+    "lastSeen": "Last seen {{time}}",
+    "justNow": "just now",
+    "neverActive": "Hasn't been active yet"
+  },
+  "reply": {
+    "replyingTo": "Replying to {{username}}",
+    "replyButton": "Reply",
+    "cancel": "Cancel reply",
+    "originalUnavailable": "Original message unavailable"
+  },
+  "block": {
+    "blockedNotice": "You've blocked this user. Unblock them to send messages."
+  }
+}

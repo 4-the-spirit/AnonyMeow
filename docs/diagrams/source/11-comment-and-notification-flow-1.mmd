@@ -1,0 +1,41 @@
+sequenceDiagram
+    actor U as User
+    participant EP as CommentEndpoints
+    participant CS as CommentService
+    participant CSP as ContentSubmissionPipeline
+    participant MP as MentionParsingService
+    participant DB as AppDbContext / PostgreSQL
+    participant SF as SpamFlaggingService
+    participant ND as NotificationDispatcher
+    participant Hub as NotificationHub (SignalR)
+    actor R as Recipient (connected client)
+
+    U->>EP: POST /api/posts/{postId}/comments {body, parentCommentId?}
+    EP->>CS: CreateAsync(postId, authorId, body, parentCommentId)
+    CS->>DB: verify post exists & not locked,<br/>check CommunityBan / PlatformRestriction
+    CS->>CSP: EvaluateAsync(body, ContentType = Comment)
+    CSP-->>CS: IsBlocked?
+
+    alt PII blocked
+        CS-->>EP: throws PiiDetectedException
+        EP-->>U: 400
+    else allowed
+        CS->>DB: INSERT Comment
+        CS->>SF: FlagIfSpamAsync(CommentId, ...)
+        CS->>MP: ExtractMentionedUsersAsync(body)
+        MP-->>CS: mentioned usernames[]
+
+        opt reply to a comment or post
+            CS->>ND: DispatchAsync(parentAuthorId, Reply, Comment, commentId)
+        end
+        loop each @mention (not deduped against the Reply notification)
+            CS->>ND: DispatchAsync(mentionedUserId, Mention, Comment, commentId)
+        end
+
+        ND->>DB: INSERT Notification
+        ND->>Hub: Clients.Group("user:{recipientId}").ReceiveNotification(...)
+        Hub-->>R: real-time push (if connected,<br/>row persists either way for later polling)
+
+        CS-->>EP: CommentResponse
+        EP-->>U: 201 Created
+    end

@@ -1,0 +1,8 @@
+{
+  "emptyTitle": "אין תגובות שמורות",
+  "emptyDescription": "תגובות שתשמרו יופיעו כאן.",
+  "postedByPrefix": "פורסם על ידי",
+  "postedByCommunity": "ב-c/{{community}}",
+  "commentMeta": "{{score}} נקודות · {{date}}",
+  "viewInPost": "צפייה בפוסט"
+}

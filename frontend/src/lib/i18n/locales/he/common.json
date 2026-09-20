@@ -1,0 +1,139 @@
+{
+  "appName": "AnonyMeow",
+  "nav": {
+    "home": "קהילות",
+    "communities": "קהילות",
+    "myCommunities": "הקהילות שלי",
+    "suggestedCommunities": "מומלצות",
+    "browseAll": "עיון בכל הקהילות",
+    "newCommunity": "קהילה חדשה",
+    "feed": "פיד",
+    "messages": "הודעות",
+    "notifications": "התראות",
+    "myProfile": "הפרופיל שלי",
+    "editProfile": "עריכת פרופיל",
+    "saved": "שמורים",
+    "friendRequests": "בקשות חברות",
+    "platformAdmin": "ניהול פלטפורמה",
+    "switchUserDev": "החלפת משתמש (פיתוח)",
+    "toggleSidebar": "הצגה/הסתרה של סרגל הצד",
+    "signIn": "התחברות",
+    "signUp": "הרשמה",
+    "signOut": "התנתקות"
+  },
+  "actions": {
+    "save": "שמירה",
+    "saveChanges": "שמירת שינויים",
+    "saving": "שומר…",
+    "cancel": "ביטול",
+    "submit": "שליחה",
+    "delete": "מחיקה",
+    "edit": "עריכה",
+    "retry": "ניסיון חוזר",
+    "close": "סגירה",
+    "confirm": "אישור",
+    "back": "חזרה"
+  },
+  "errors": {
+    "generic": "משהו השתבש. נסו שוב."
+  },
+  "notFound": {
+    "title": "הדף לא נמצא",
+    "description": "אין כאן כלום — אפילו לא חתול אחד.",
+    "backToCommunities": "חזרה לקהילות"
+  },
+  "loading": "טוען",
+  "language": "שפה",
+  "pagination": {
+    "previous": "הקודם",
+    "next": "הבא",
+    "pageOfTotal": "עמוד {{page}} מתוך {{totalPages}}"
+  },
+  "validation": {
+    "usernameLength": "שם המשתמש חייב להכיל 3-20 תווים",
+    "usernameFormat": "אותיות לועזיות קטנות, ספרות וקווים תחתונים בלבד",
+    "communityNameLength": "שם הקהילה חייב להכיל 3-30 תווים",
+    "communityNameFormat": "אותיות בעברית, ספרות, רווחים, קווים תחתונים ומקפים בלבד",
+    "displayNameRequired": "שם התצוגה הוא שדה חובה",
+    "messageRequired": "ההודעה לא יכולה להיות ריקה",
+    "reasonRequired": "יש להזין סיבה",
+    "usernameRequired": "יש להזין שם משתמש",
+    "nameRequired": "יש להזין שם",
+    "hexColorFormat": "יש להזין קוד צבע הקס, לדוגמה #22C55E",
+    "titleRequired": "יש להזין כותרת",
+    "pollMinOptions": "הוסיפו לפחות 2 אפשרויות",
+    "contentRequired": "הוסיפו תוכן, תמונה או סקר.",
+    "tooManyImages": "אפשר לצרף עד {{count}} תמונות.",
+    "flairRequired": "יש לבחור תווית",
+    "imageRequired": "נדרשת תמונה",
+    "emailFormat": "יש להזין כתובת אימייל תקינה",
+    "passwordLength": "הסיסמה חייבת להכיל 8-256 תווים",
+    "passwordComplexity": "הסיסמה חייבת לכלול שילוב של לפחות 3 מתוך: אותיות גדולות, אותיות קטנות, ספרות ותווים מיוחדים",
+    "passwordRequirements": "לפחות 8 תווים, ושילוב של לפחות 3 מתוך: אותיות גדולות, אותיות קטנות, ספרות ותווים מיוחדים."
+  },
+  "voting": {
+    "upvote": "הצבעה למעלה",
+    "downvote": "הצבעה למטה",
+    "errorToast": "לא ניתן לרשום את ההצבעה שלך."
+  },
+  "imageUpload": {
+    "successToast": "התמונה הועלתה",
+    "errorToastUnavailable": "העלאת תמונות עדיין לא זמינה (האחסון לא מוגדר).",
+    "errorToastFailed": "העלאת התמונה נכשלה.",
+    "uploading": "מעלה…",
+    "previewAlt": "תצוגה מקדימה של ההעלאה",
+    "unavailableTitle": "העלאת תמונות עדיין לא זמינה",
+    "unavailableDescription": "Azure Blob Storage עדיין לא מוגדר בשרת.",
+    "dropzoneCta": "גררו תמונה לכאן, או לחצו לבחירת קובץ",
+    "dropzoneCtaMulti": "הוספת תמונה (נותרו {{count}})",
+    "dropzoneHint": "PNG או JPG",
+    "replace": "החלפת תמונה"
+  },
+  "authError": {
+    "title": "לא ניתן היה לחבר אותך",
+    "description": "משהו השתבש ביצירת הפעלת פיתוח מקומית. נסו לרענן את הדף."
+  },
+  "linkWarning": {
+    "title": "יוצאים מ-AnonyMeow",
+    "description": "אתם עומדים לבקר באתר {{hostname}}. להמשיך?",
+    "continue": "המשך",
+    "cancel": "ביטול"
+  },
+  "markdownEditor": {
+    "bold": "מודגש",
+    "italic": "נטוי",
+    "link": "קישור",
+    "linkTextLabel": "טקסט הקישור (אופציונלי)",
+    "linkTextPlaceholder": "הטקסט שיוצג",
+    "linkUrlLabel": "כתובת URL",
+    "linkUrlPlaceholder": "https://…",
+    "linkInsert": "הוספת קישור",
+    "bulletList": "רשימת תבליטים",
+    "numberedList": "רשימה ממוספרת",
+    "quote": "ציטוט",
+    "code": "קוד",
+    "emoji": "אימוג'י",
+    "write": "כתיבה",
+    "preview": "תצוגה מקדימה",
+    "formatting": "עיצוב",
+    "nothingToPreview": "*אין מה להציג בתצוגה מקדימה*"
+  },
+  "emojiPicker": {
+    "categorySmileys": "פרצופים",
+    "categoryGestures": "מחוות",
+    "categoryHearts": "לבבות",
+    "categoryAnimals": "בעלי חיים",
+    "categoryFood": "אוכל",
+    "categorySymbols": "סמלים"
+  },
+  "emoji": {
+    "catFace": "פרצוף חתול",
+    "thumbsUp": "אגודל למעלה",
+    "thumbsDown": "אגודל למטה",
+    "redHeart": "לב אדום",
+    "faceWithTearsOfJoy": "פרצוף עם דמעות שמחה",
+    "faceWithOpenMouth": "פרצוף עם פה פתוח",
+    "cryingFace": "פרצוף בוכה",
+    "fire": "אש"
+  }
+}

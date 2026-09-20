@@ -1,0 +1,22 @@
+flowchart LR
+    subgraph Callers
+        Feed["FeedService.GetFeedAsync"]
+        PostList["PostService.ListByCommunityAsync"]
+        CommentList["CommentService.ListTopLevelAsync /<br/>ListRepliesAsync"]
+        Discover["DiscoveryService (trending)"]
+    end
+
+    Parser["SortOrderParser.Parse(?sort=)<br/>defaults to New if unknown/missing"] -.-> Callers
+
+    Callers -->|"sortOrder: SortOrder enum"| RS["RankingService"]
+    RS -->|"GetRequiredKeyedService&lt;ISortStrategy&gt;(sortOrder)"| DI["DI container<br/>(6 keyed ISortStrategy registrations)"]
+
+    DI --> New["NewSortStrategy<br/>OrderByDescending(CreatedAtUtc)"]
+    DI --> Top["TopSortStrategy<br/>OrderByDescending(Σ Vote.Value)"]
+    DI --> Hot["HotSortStrategy<br/>votes − linear time-decay"]
+    DI --> Ctrl["ControversialSortStrategy<br/>min(up,down) / max(up,down,1)"]
+    DI --> Trend["TrendingSortStrategy<br/>votes + 0.5 × comment count"]
+    DI --> Pin["PinnedSortStrategy<br/>Where(IsPinned) then newest"]
+
+    New & Top & Hot & Ctrl & Trend & Pin --> Applied["ApplyToPosts / ApplyToComments<br/>(IQueryable — stays SQL-translatable)"]
+    Applied --> DB[("PostgreSQL")]

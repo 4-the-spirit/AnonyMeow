@@ -1,0 +1,51 @@
+{
+  "section": {
+    "title": "Comments",
+    "postLocked": "This post is locked.",
+    "noneYetTitle": "No comments yet",
+    "noneYetDescription": "Start the discussion."
+  },
+  "composer": {
+    "replyPlaceholder": "Write a reply…",
+    "newPlaceholder": "Join the discussion…",
+    "reply": "Reply",
+    "comment": "Comment",
+    "cancel": "Cancel",
+    "errorToast": "Could not post your comment.",
+    "signInPrompt": "Sign in to join the discussion."
+  },
+  "item": {
+    "reply": "Reply",
+    "edit": "Edit",
+    "edited": "edited",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this comment?",
+    "deleteSuccessToast": "Comment deleted",
+    "deleteErrorToast": "Could not delete the comment.",
+    "replyCount_one": "{{count}} reply",
+    "replyCount_other": "{{count}} replies",
+    "loadingReplies": "Loading replies…",
+    "showMoreReplies_one": "Show {{count}} more reply",
+    "showMoreReplies_other": "Show {{count}} more replies",
+    "continueThread": "Continue this thread",
+    "minimize": "Minimize",
+    "expand": "Expand",
+    "minimized": "comment minimized",
+    "save": "Save",
+    "unsave": "Unsave",
+    "saveSuccessToast": "Comment saved",
+    "unsaveSuccessToast": "Comment unsaved",
+    "saveErrorToast": "Could not save this comment.",
+    "unsaveErrorToast": "Could not unsave this comment."
+  },
+  "editForm": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "successToast": "Comment updated",
+    "errorToast": "Could not update the comment."
+  },
+  "thread": {
+    "title": "Thread",
+    "backToPost": "Back to \"{{title}}\""
+  }
+}

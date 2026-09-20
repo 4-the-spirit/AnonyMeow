@@ -1,0 +1,10 @@
+{
+  "emptyTitle": "אין פוסטים שמורים",
+  "emptyDescription": "פוסטים שתשמרו יופיעו כאן.",
+  "save": "שמירה",
+  "unsave": "ביטול שמירה",
+  "saveSuccessToast": "הפוסט נשמר",
+  "unsaveSuccessToast": "שמירת הפוסט בוטלה",
+  "saveErrorToast": "לא ניתן לשמור את הפוסט הזה.",
+  "unsaveErrorToast": "לא ניתן לבטל את שמירת הפוסט הזה."
+}

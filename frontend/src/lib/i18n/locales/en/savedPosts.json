@@ -1,0 +1,10 @@
+{
+  "emptyTitle": "No saved posts",
+  "emptyDescription": "Posts you save will show up here.",
+  "save": "Save",
+  "unsave": "Unsave",
+  "saveSuccessToast": "Post saved",
+  "unsaveSuccessToast": "Post unsaved",
+  "saveErrorToast": "Could not save this post.",
+  "unsaveErrorToast": "Could not unsave this post."
+}

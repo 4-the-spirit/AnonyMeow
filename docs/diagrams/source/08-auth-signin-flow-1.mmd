@@ -1,0 +1,35 @@
+sequenceDiagram
+    actor U as User (Browser/SPA)
+    participant API as NativeAuthEndpoints
+    participant SI as SignInFlowService
+    participant NC as NativeAuthClient
+    participant CIAM as Entra External ID (CIAM)
+
+    U->>API: POST /api/auth/native/signin/start {email, password}
+    API->>SI: StartAsync(email, password)
+    SI->>NC: oauth2/v2.0/initiate
+    NC->>CIAM: initiate {email}
+
+    alt user not found
+        CIAM-->>NC: error: user_not_found
+        NC-->>SI: throws
+        SI-->>API: NativeAuthAccountNotFoundException
+        API-->>U: error response
+    else user found
+        CIAM-->>NC: continuation_token
+        NC->>CIAM: oauth2/v2.0/challenge
+        CIAM-->>NC: challenge_type = "password"
+        NC->>CIAM: oauth2/v2.0/token (grant_type=password)
+
+        alt invalid credentials
+            CIAM-->>NC: error: invalid_grant
+            NC-->>SI: throws
+            SI-->>API: NativeAuthInvalidCredentialsException
+            API-->>U: error response
+        else success
+            CIAM-->>NC: access_token, id_token, refresh_token
+            NC-->>SI: NativeAuthTokenResult
+            SI-->>API: tokens
+            API-->>U: 200 AuthTokensResponse
+        end
+    end

@@ -1,0 +1,32 @@
+{
+  "action": {
+    "friends": "חברים ✓",
+    "accept": "אישור",
+    "decline": "דחייה",
+    "cancelRequest": "ביטול בקשה",
+    "addFriend": "הוספת חבר",
+    "removeConfirm": "להסיר את {{username}} מרשימת החברים?",
+    "removeSuccessToast": "החבר הוסר",
+    "removeErrorToast": "לא ניתן להסיר את החבר הזה.",
+    "sendSuccessToast": "בקשת החברות נשלחה",
+    "sendErrorToast": "לא ניתן לשלוח בקשת חברות.",
+    "acceptSuccessToast": "אתם ו-{{username}} עכשיו חברים",
+    "acceptErrorToast": "לא ניתן לאשר את הבקשה הזו.",
+    "declineSuccessToast": "בקשת החברות נדחתה",
+    "declineErrorToast": "לא ניתן לדחות את הבקשה הזו.",
+    "cancelSuccessToast": "בקשת החברות בוטלה",
+    "cancelErrorToast": "לא ניתן לבטל את הבקשה הזו."
+  },
+  "list": {
+    "privateTitle": "רשימת החברים הזו פרטית",
+    "noneYetTitle": "אין עדיין חברים"
+  },
+  "requestsPage": {
+    "title": "בקשות חברות",
+    "incoming": "נכנסות",
+    "outgoing": "יוצאות",
+    "noIncoming": "אין בקשות נכנסות",
+    "noOutgoing": "אין בקשות יוצאות",
+    "cancel": "ביטול"
+  }
+}

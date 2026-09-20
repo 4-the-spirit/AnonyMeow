@@ -1,0 +1,35 @@
+flowchart TB
+    Text["Submitted text<br/>(Post / Comment / Message)"] --> PiiSvc
+
+    subgraph PiiGate["1. PII Detection — pre-persist hard gate"]
+        direction TB
+        PiiSvc["CompositePiiDetectionService"]
+        D1["EmailPatternDetector"]
+        D2["PhoneNumberDetector"]
+        D3["AddressHeuristicDetector"]
+        PiiSvc --> D1 & D2 & D3
+        D1 & D2 & D3 --> Matches["PiiDetectionMatch[]<br/>(DetectorType, Category, WasBlocked)"]
+    end
+
+    Matches --> Log["Persist PiiDetectionLog row per match<br/>(redacted category only — never raw text)"]
+    Log --> Blocked{"Any match has<br/>WasBlocked = true?"}
+    Blocked -- Yes --> Reject(["Throw PiiDetectedException —<br/>content is NEVER persisted"])
+    Blocked -- No --> Persist["Persist the entity<br/>(Post / Comment / Message)"]
+
+    Persist --> SpamSvc
+
+    subgraph SpamGate["2. Spam Detection — post-persist, flag-only"]
+        direction TB
+        SpamSvc["CompositeSpamDetectionService"]
+        H1["PostingFrequencyHeuristic<br/>(new-account rate check)"]
+        H2["DuplicateContentHeuristic<br/>(SHA-256 hash match vs. author's recent content)"]
+        H3["LinkSpamHeuristic<br/>(URL host vs. blocked-domain list)"]
+        SpamSvc --> H1 & H2 & H3
+    end
+
+    SpamSvc --> SpamMatch{"Any heuristic matched?"}
+    SpamMatch -- No --> Done(["Published, unflagged"])
+    SpamMatch -- Yes --> SysUser["Lazily create synthetic<br/>'system' AppUser if needed"]
+    SysUser --> ReportRow["INSERT Report<br/>(Category = Spam, filed by system user)"]
+    ReportRow --> FlagRow["INSERT SpamFlag per matched reason<br/>(Status = Open), linked to ReportId"]
+    FlagRow --> ModQueue(["Enters the normal moderator<br/>Report review queue"])

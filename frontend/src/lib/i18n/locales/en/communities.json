@@ -1,0 +1,83 @@
+{
+  "create": {
+    "title": "Create a community",
+    "intro": "You'll automatically become its first moderator.",
+    "nameLabel": "Name",
+    "namePlaceholder": "e.g. תמונות-חתולים",
+    "nameHint": "Permanent, 3-30 characters. Hebrew letters, numbers, spaces, underscores, and hyphens only.",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "What's this community about?",
+    "rulesLabel": "Rules (optional)",
+    "ruleTitlePlaceholder": "Rule title",
+    "ruleDescriptionPlaceholder": "Rule description",
+    "removeRule": "Remove rule {{number}}",
+    "addRule": "Add rule",
+    "flairsLabel": "Custom tags (optional)",
+    "defaultTagsHint": "Every community already includes these tags: {{names}}",
+    "flairDuplicatesDefault": "This is already one of the default tags",
+    "flairNamePlaceholder": "Tag {{number}} name",
+    "removeFlair": "Remove tag {{number}}",
+    "addFlair": "Add tag",
+    "iconLabel": "Icon",
+    "bannerLabel": "Banner",
+    "creating": "Creating…",
+    "submit": "Create community",
+    "successToast": "c/{{name}} created",
+    "errorToast": "Could not create the community. Please try again."
+  },
+  "settings": {
+    "title": "c/{{name}} settings",
+    "descriptionLabel": "Description",
+    "iconLabel": "Icon",
+    "bannerLabel": "Banner",
+    "saving": "Saving…",
+    "saveChanges": "Save changes",
+    "successToast": "Community settings saved",
+    "errorToast": "Could not save settings.",
+    "moderatorsOnlyTitle": "Moderators only",
+    "moderatorsOnlyDescription": "Only a moderator of c/{{name}} can edit its settings."
+  },
+  "detail": {
+    "submitPost": "Submit post",
+    "memberCount_one": "{{count}} member",
+    "memberCount_other": "{{count}} members",
+    "trending": "Trending",
+    "moderators": "Moderators",
+    "members": "Members",
+    "settings": "Settings",
+    "modQueue": "Mod queue",
+    "bans": "Bans",
+    "flairs": "Flairs",
+    "rules": "Rules"
+  },
+  "moderatorsPage": {
+    "title": "c/{{name}} moderators"
+  },
+  "membersPage": {
+    "title": "c/{{name}} members",
+    "searchPlaceholder": "Search members by username or display name…",
+    "noneYetTitle": "No members yet",
+    "noneFoundTrySearch": "No matching members found. Try a different search.",
+    "moderatorBadge": "Moderator",
+    "promote": "Make moderator",
+    "promoteSuccessToast": "{{username}} is now a moderator",
+    "promoteErrorToast": "Could not make this user a moderator.",
+    "demote": "Remove as moderator",
+    "demoteSuccessToast": "{{username}} is no longer a moderator",
+    "demoteErrorToast": "Could not remove this user as moderator."
+  },
+  "browse": {
+    "title": "Communities",
+    "intro": "Browse and join topic communities, or start your own.",
+    "searchPlaceholder": "Search communities…",
+    "noneFoundTitle": "No communities found",
+    "noneFoundTrySearch": "Try a different search.",
+    "noneFoundBeFirst": "Be the first to create one."
+  },
+  "join": {
+    "join": "Join",
+    "leave": "Leave",
+    "errorJoin": "Could not join community",
+    "errorLeave": "Could not leave community"
+  }
+}

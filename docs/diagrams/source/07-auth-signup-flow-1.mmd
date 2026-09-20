@@ -1,0 +1,32 @@
+sequenceDiagram
+    actor U as User (Browser/SPA)
+    participant API as NativeAuthEndpoints
+    participant SU as SignUpFlowService
+    participant NC as NativeAuthClient
+    participant CIAM as Entra External ID (CIAM)
+
+    U->>API: POST /api/auth/native/signup/start {email, password}
+    API->>SU: SignUpStartAsync(email, password)
+    SU->>NC: signup/v1.0/start
+    NC->>CIAM: start
+    CIAM-->>NC: continuation_token
+    NC->>CIAM: signup/v1.0/challenge
+    CIAM-->>NC: challenge_type = "oob" (email OTP)
+    NC-->>SU: OtpChallenge
+    SU-->>API: SignUpStartResult.OtpChallenge
+    API-->>U: 200 OtpChallengeResponse
+
+    Note over U,CIAM: user checks email for the one-time code
+
+    U->>API: POST /api/auth/native/signup/verify-email {continuationToken, code}
+    API->>SU: VerifyEmailAsync(token, code)
+    SU->>NC: signup/v1.0/continue (grant_type=oob)
+    NC->>CIAM: continue
+    CIAM-->>NC: continuation_token (verified)
+    NC->>CIAM: oauth2/v2.0/token (grant_type=continuation_token)
+    CIAM-->>NC: access_token, id_token, refresh_token
+    NC-->>SU: NativeAuthTokenResult
+    SU-->>API: tokens
+    API-->>U: 200 AuthTokensResponse {accessToken, refreshToken, oid, ...}
+
+    Note over U: subsequent API calls use accessToken as Bearer.<br/>Username is still empty at this point —<br/>POST /api/auth/complete-profile must be called next<br/>(see 06-authorization-and-authentication-pipeline.md)

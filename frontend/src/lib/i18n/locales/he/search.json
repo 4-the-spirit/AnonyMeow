@@ -1,0 +1,22 @@
+{
+  "searchBar": {
+    "placeholder": "חיפוש ב-AnonyMeow"
+  },
+  "pageTitle": "תוצאות חיפוש עבור \"{{query}}\"",
+  "noQueryTitle": "הזינו מונח חיפוש למעלה",
+  "tabs": {
+    "all": "הכול",
+    "posts": "פוסטים",
+    "comments": "תגובות",
+    "communities": "קהילות"
+  },
+  "sections": {
+    "posts": "פוסטים ({{count}})",
+    "comments": "תגובות ({{count}})",
+    "communities": "קהילות ({{count}})"
+  },
+  "results": {
+    "commentScore": "{{score}} נקודות",
+    "noneFound": "אין תוצאות עבור \"{{query}}\""
+  }
+}

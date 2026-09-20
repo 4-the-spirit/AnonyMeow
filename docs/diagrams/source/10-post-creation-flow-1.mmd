@@ -1,0 +1,45 @@
+sequenceDiagram
+    actor U as User
+    participant EP as PostEndpoints
+    participant PS as PostService
+    participant IU as ImageUploadService
+    participant CSP as ContentSubmissionPipeline
+    participant DB as AppDbContext / PostgreSQL
+    participant SF as SpamFlaggingService
+
+    opt post has images
+        U->>EP: POST /api/uploads/images/sas
+        EP->>IU: request SAS URL
+        IU-->>EP: SAS URL + blob path
+        EP-->>U: 200 ImageUploadSasResponse
+        U->>U: PUT image bytes directly to Azure Blob
+    end
+
+    U->>EP: POST /api/communities/{name}/posts {title, body, images, flairId, poll?}
+    EP->>PS: CreateAsync(communityId, authorId, request)
+    PS->>DB: check CommunityBan / PlatformRestriction
+
+    alt banned or restricted
+        DB-->>PS: match found
+        PS-->>EP: throws CommunityBannedException / PlatformRestrictedException
+        EP-->>U: 403
+    else allowed to post
+        PS->>PS: validate flair belongs to community,<br/>validate image ownership via ImageUploadService
+        PS->>CSP: EvaluateAsync(title + body, ContentType = Post)
+        CSP-->>PS: IsBlocked?
+
+        alt PII blocked
+            PS-->>EP: throws PiiDetectedException
+            EP-->>U: 400 (detected categories)
+        else not blocked
+            PS->>DB: INSERT Post + PostImages + PollOptions
+            DB-->>PS: saved
+            PS->>SF: FlagIfSpamAsync(PostId, authorId, text)
+            SF->>SF: run heuristics (frequency, duplicate, link)
+            opt a heuristic matched
+                SF->>DB: INSERT Report(Spam) + SpamFlag
+            end
+            PS-->>EP: PostResponse
+            EP-->>U: 201 Created
+        end
+    end

@@ -1,0 +1,44 @@
+sequenceDiagram
+    actor U1 as User A
+    participant EP as Conversation/MessageEndpoints
+    participant CVS as ConversationService
+    participant BS as BlockService
+    participant MS as MessageService
+    participant CSP as ContentSubmissionPipeline
+    participant SF as SpamFlaggingService
+    participant DB as AppDbContext / PostgreSQL
+    participant Hub as NotificationHub (SignalR)
+    actor U2 as User B (recipient)
+
+    U1->>EP: POST /api/conversations {otherUsername}
+    EP->>CVS: GetOrCreateAsync(A, B)
+    CVS->>BS: IsBlockedEitherWayAsync(A, B)
+
+    alt blocked (either direction)
+        BS-->>CVS: true
+        CVS-->>EP: throws UserBlockedException
+        EP-->>U1: 403
+    else not blocked
+        CVS->>DB: canonicalize (lower GUID = ParticipantA), find-or-create
+        CVS-->>EP: ConversationResponse
+        EP-->>U1: 200 / 201
+
+        U1->>EP: POST /api/conversations/{id}/messages {body}
+        EP->>MS: SendAsync(conversationId, A, body)
+        MS->>DB: verify A is a participant
+        MS->>BS: re-check block status (block may have happened since)
+        MS->>CSP: EvaluateAsync(body, ContentType = DirectMessage)
+
+        alt PII blocked
+            CSP-->>MS: IsBlocked
+            MS-->>EP: throws PiiDetectedException
+            EP-->>U1: 400
+        else allowed
+            MS->>DB: INSERT Message, clear both participants' DeletedBy*AtUtc
+            MS->>SF: FlagIfSpamAsync(MessageId, ...)
+            MS->>Hub: Clients.Group("user:{B}").ReceiveMessage(...)
+            Hub-->>U2: real-time push (bypasses the Notification table)
+            MS-->>EP: MessageResponse
+            EP-->>U1: 201
+        end
+    end

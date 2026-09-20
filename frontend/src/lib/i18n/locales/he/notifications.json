@@ -1,0 +1,21 @@
+{
+  "types": {
+    "Reply": "תגובה",
+    "Mention": "אזכור",
+    "ModAction": "ניהול",
+    "FriendRequest": "בקשת חברות"
+  },
+  "page": {
+    "title": "התראות",
+    "markAllRead": "סימון הכל כנקרא",
+    "markAllReadSuccessToast": "כל ההתראות סומנו כנקראו",
+    "markAllReadErrorToast": "לא ניתן לסמן את כל ההתראות כנקראו.",
+    "showingUnreadOnly": "מציג רק שלא נקראו",
+    "showUnreadOnly": "הצג רק שלא נקראו",
+    "noUnread": "אין התראות שלא נקראו",
+    "noneYet": "אין עדיין התראות"
+  },
+  "item": {
+    "openErrorToast": "לא ניתן לפתוח את ההתראה הזו."
+  }
+}

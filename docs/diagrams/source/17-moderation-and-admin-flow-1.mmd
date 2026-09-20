@@ -1,0 +1,44 @@
+sequenceDiagram
+    actor Rep as Reporter
+    participant REP as ModerationEndpoints
+    participant RS as ReportService
+    participant DB as AppDbContext / PostgreSQL
+    actor Mod as Community Moderator
+    participant MAS as ModerationActionService
+    participant ND as NotificationDispatcher
+
+    Rep->>REP: POST /api/posts/{id}/reports {category, reason}
+    REP->>RS: CreateAsync(Post, id, reporterId, category, reason)
+    RS->>DB: INSERT Report (Status = Open)
+
+    Mod->>REP: GET /api/communities/{name}/mod/reports
+    REP->>REP: AuthorizeAsync(user, community, "CommunityModerator")
+    REP->>RS: list open reports for this community
+
+    Mod->>REP: POST /api/communities/{name}/mod/reports/{id}/resolve {outcome}
+    REP->>RS: GetCommunityIdForReportAsync(report) — re-verify ownership
+
+    alt report belongs to a different community
+        RS-->>REP: mismatch
+        REP-->>Mod: 404
+    else matches this community
+        REP->>RS: ResolveAsync(report, communityId, modId, outcome)
+        RS->>DB: UPDATE Report.Status = ActionTaken | Dismissed
+        opt outcome = ActionTaken
+            RS->>MAS: RecordReportResolutionAsync(...)
+            MAS->>DB: INSERT ModerationAction (ReportResolve)
+        end
+        Note over Mod,MAS: Resolving is just the audit trail —<br/>actual remediation is a separate explicit call below
+    end
+
+    Mod->>REP: POST /api/posts/{id}/mod/remove
+    REP->>MAS: RemoveAsync(postId, modId, reason)
+    MAS->>DB: UPDATE Post.IsRemoved = true
+    MAS->>DB: INSERT ModerationAction (Remove)
+    MAS->>ND: DispatchAsync(authorId, ModAction, ...)
+
+    Mod->>REP: POST /api/communities/{name}/mod/bans {username, reason}
+    REP->>MAS: BanAsync(communityId, targetUserId, modId, reason)
+    MAS->>DB: INSERT CommunityBan
+    MAS->>DB: INSERT ModerationAction (Ban, CommunityId set)
+    MAS->>ND: notify target

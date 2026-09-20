@@ -1,0 +1,30 @@
+{
+  "edit": {
+    "title": "עריכת פרופיל",
+    "usernamePermanent": "שם המשתמש {{username}} הוא קבוע ולא ניתן לשינוי.",
+    "shuffleAvatar": "החלפת אווטאר",
+    "displayNameLabel": "שם תצוגה",
+    "friendListVisibilityLabel": "חשיפת רשימת החברים",
+    "friendListVisibilityHint": "מי יכול לראות את רשימת החברים שלך בפרופיל.",
+    "visibilityEveryone": "כולם",
+    "visibilityFriendsOnly": "חברים בלבד",
+    "visibilityNoOne": "אף אחד",
+    "saving": "שומר…",
+    "saveChanges": "שמירת שינויים",
+    "successToast": "הפרופיל עודכן",
+    "errorToast": "לא ניתן לעדכן את הפרופיל שלך."
+  },
+  "tabs": {
+    "posts": "פוסטים",
+    "comments": "תגובות",
+    "communities": "קהילות",
+    "friends": "חברים"
+  },
+  "karmaAndJoined": "{{karma}} קארמה · הצטרפ/ה ב-{{date}}",
+  "noPostsYet": "אין עדיין פוסטים",
+  "noCommentsYet": "אין עדיין תגובות",
+  "noCommunitiesYet": "עדיין לא הצטרפ/ה לאף קהילה",
+  "moderatorBadge": "מנהל/ת",
+  "viewInPost": "צפייה בפוסט",
+  "commentMeta": "{{score}} נקודות · {{date}}"
+}

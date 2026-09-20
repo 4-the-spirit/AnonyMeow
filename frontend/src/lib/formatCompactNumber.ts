@@ -1,0 +1,6 @@
+export function formatCompactNumber(count: number, locale: string) {
+  return new Intl.NumberFormat(locale, {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(count)
+}

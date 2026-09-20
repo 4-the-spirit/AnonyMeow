@@ -1,0 +1,32 @@
+# .NET / backend
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/.env.local
+frontend/*.local
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+frontend/shots/
+.vite/
+
+# Editors / OS
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local-only working files (not part of the published repo)
+/Execution Log/
+/data/
+
+# Unused duplicate of frontend/public/{white,gray}/*.mp4 — not referenced by any backend code
+# or build step; frontend/public/ is the actual served copy. Left on disk locally pending a
+# decision to either wire up a real copy step or delete these for good.
+/backend/Resources/

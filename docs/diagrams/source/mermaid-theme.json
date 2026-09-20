@@ -1,0 +1,93 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif",
+    "fontSize": "16px",
+
+    "background": "#FFFFFF",
+    "darkMode": false,
+
+    "primaryColor": "#E7EFFB",
+    "primaryBorderColor": "#2C5AA0",
+    "primaryTextColor": "#1A2433",
+
+    "secondaryColor": "#E4F3F0",
+    "secondaryBorderColor": "#2C8C7C",
+    "secondaryTextColor": "#1A2433",
+
+    "tertiaryColor": "#FBF3DC",
+    "tertiaryBorderColor": "#D8B94A",
+    "tertiaryTextColor": "#1A2433",
+
+    "lineColor": "#5B6B82",
+    "textColor": "#1A2433",
+
+    "mainBkg": "#E7EFFB",
+    "nodeBorder": "#2C5AA0",
+    "nodeTextColor": "#1A2433",
+
+    "clusterBkg": "#F5F8FC",
+    "clusterBorder": "#B7C4D6",
+    "titleColor": "#1A2433",
+
+    "edgeLabelBackground": "#FFFFFF",
+
+    "actorBkg": "#E7EFFB",
+    "actorBorder": "#2C5AA0",
+    "actorTextColor": "#1A2433",
+    "actorLineColor": "#B7C4D6",
+
+    "signalColor": "#3A4A5E",
+    "signalTextColor": "#1A2433",
+
+    "labelBoxBkgColor": "#E4F3F0",
+    "labelBoxBorderColor": "#2C8C7C",
+    "labelTextColor": "#1A2433",
+
+    "loopTextColor": "#1A2433",
+
+    "activationBorderColor": "#2C5AA0",
+    "activationBkgColor": "#C9DAF1",
+
+    "noteBkgColor": "#FBF3DC",
+    "noteBorderColor": "#D8B94A",
+    "noteTextColor": "#4A3C10",
+
+    "sequenceNumberColor": "#FFFFFF",
+
+    "attributeBackgroundColorOdd": "#F5F8FC",
+    "attributeBackgroundColorEven": "#FFFFFF",
+
+    "labelBackgroundColor": "#FFFFFF",
+
+    "errorBkgColor": "#FBEAEA",
+    "errorTextColor": "#7A2020"
+  },
+  "themeCSS": ".node rect, .node polygon, .node circle, .node path, g.classGroup rect, .er rect, .actor, rect.actor { filter: drop-shadow(0 1px 2.5px rgba(26,36,51,0.18)); } .cluster rect { filter: none; stroke-width: 1.25px; } .edgeLabel { border-radius: 3px; } .edgeLabel rect { fill: #FFFFFF; fill-opacity: 1; } .messageText, .messageLine0, .messageLine1 { stroke-width: 1.25px; } .labelBkg { background-color: rgba(255,255,255,0.9) !important; } text.actor { font-weight: 600; } .entityBox { filter: drop-shadow(0 1px 2.5px rgba(26,36,51,0.18)); } .node rect, .er rect, .entityBox, rect.actor, .note rect, .edgeLabel rect, .labelBox, g.classGroup rect { rx: 10px; ry: 10px; } .cluster rect { rx: 16px; ry: 16px; } .er rect.er-attributeBoxOdd, .er rect.er-attributeBoxEven { rx: 0px; ry: 0px; }",
+  "flowchart": {
+    "curve": "basis",
+    "htmlLabels": true,
+    "padding": 18,
+    "nodeSpacing": 45,
+    "rankSpacing": 55
+  },
+  "sequence": {
+    "diagramMarginX": 90,
+    "diagramMarginY": 20,
+    "actorMargin": 60,
+    "width": 320,
+    "messageMargin": 42,
+    "boxMargin": 12,
+    "noteMargin": 12,
+    "mirrorActors": true,
+    "wrap": true,
+    "wrapPadding": 16
+  },
+  "er": {
+    "entityPadding": 12,
+    "fontSize": 15
+  },
+  "state": {
+    "padding": 14
+  }
+}

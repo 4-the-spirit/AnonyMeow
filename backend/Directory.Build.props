@@ -1,0 +1,10 @@
+<Project>
+
+  <!-- Only redirects the top-level AnonyMeow project; Tests/*/bin|obj stay put since
+       scripts/ci-test-steps.sh hardcodes those paths. -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'AnonyMeow'">
+    <BaseIntermediateOutputPath>local\obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>local\bin\</BaseOutputPath>
+  </PropertyGroup>
+
+</Project>

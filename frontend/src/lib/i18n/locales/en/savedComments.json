@@ -1,0 +1,8 @@
+{
+  "emptyTitle": "No saved comments",
+  "emptyDescription": "Comments you save will show up here.",
+  "postedByPrefix": "Posted by",
+  "postedByCommunity": "in c/{{community}}",
+  "commentMeta": "{{score}} points · {{date}}",
+  "viewInPost": "View in post"
+}

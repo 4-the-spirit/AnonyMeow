@@ -1,0 +1,12 @@
+stateDiagram-v2
+    [*] --> Pending: RequestAsync (requester -> addressee)
+    Pending --> Accepted: AcceptAsync (by addressee)
+    Pending --> Declined: DeclineAsync (by addressee)
+    Pending --> [*]: CancelRequestAsync (by requester)
+    Declined --> Pending: RequestAsync again\n(old row deleted, fresh Pending row created)
+    Accepted --> [*]: RemoveAsync (either side — "unfriend")
+
+    note right of Pending
+        FriendRequest notification
+        dispatched to addressee on entry
+    end note

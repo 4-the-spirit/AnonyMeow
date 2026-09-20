@@ -1,0 +1,84 @@
+{
+  "create": {
+    "title": "יצירת קהילה",
+    "intro": "תהפכו אוטומטית למנהל/ת הראשון/ה שלה.",
+    "nameLabel": "שם",
+    "namePlaceholder": "לדוגמה: תמונות-חתולים",
+    "nameHint": "קבוע, 3-30 תווים. אותיות בעברית, ספרות, רווחים, קווים תחתונים ומקפים בלבד.",
+    "descriptionLabel": "תיאור",
+    "descriptionPlaceholder": "במה עוסקת הקהילה הזו?",
+    "rulesLabel": "כללים (אופציונלי)",
+    "ruleTitlePlaceholder": "כותרת הכלל",
+    "ruleDescriptionPlaceholder": "תיאור הכלל",
+    "removeRule": "הסרת כלל {{number}}",
+    "addRule": "הוספת כלל",
+    "flairsLabel": "תוויות מותאמות אישית (אופציונלי)",
+    "defaultTagsHint": "כל קהילה כוללת כבר את התוויות: {{names}}",
+    "flairDuplicatesDefault": "זו כבר אחת מתוויות ברירת המחדל",
+    "flairNamePlaceholder": "שם תווית {{number}}",
+    "removeFlair": "הסרת תווית {{number}}",
+    "addFlair": "הוספת תווית",
+    "iconLabel": "סמל",
+    "bannerLabel": "באנר",
+    "creating": "יוצר…",
+    "submit": "יצירת קהילה",
+    "successToast": "c/{{name}} נוצרה",
+    "errorToast": "לא ניתן ליצור את הקהילה. נסו שוב."
+  },
+  "settings": {
+    "title": "הגדרות c/{{name}}",
+    "descriptionLabel": "תיאור",
+    "iconLabel": "סמל",
+    "bannerLabel": "באנר",
+    "saving": "שומר…",
+    "saveChanges": "שמירת שינויים",
+    "successToast": "הגדרות הקהילה נשמרו",
+    "errorToast": "לא ניתן לשמור את ההגדרות.",
+    "moderatorsOnlyTitle": "למנהלים בלבד",
+    "moderatorsOnlyDescription": "רק מנהל/ת של c/{{name}} יכול/ה לערוך את הגדרותיה."
+  },
+  "detail": {
+    "submitPost": "פרסום פוסט",
+    "memberCount_one": "{{count}} חבר",
+    "memberCount_two": "{{count}} חברים",
+    "memberCount_other": "{{count}} חברים",
+    "trending": "מגמות",
+    "moderators": "מנהלים",
+    "members": "חברים",
+    "settings": "הגדרות",
+    "modQueue": "תור ניהול",
+    "bans": "חסימות",
+    "flairs": "תוויות",
+    "rules": "כללים"
+  },
+  "moderatorsPage": {
+    "title": "מנהלי c/{{name}}"
+  },
+  "membersPage": {
+    "title": "חברי c/{{name}}",
+    "searchPlaceholder": "חיפוש חברים לפי שם משתמש או שם תצוגה…",
+    "noneYetTitle": "אין עדיין חברים",
+    "noneFoundTrySearch": "לא נמצאו חברים תואמים. נסו חיפוש אחר.",
+    "moderatorBadge": "מנהל/ת",
+    "promote": "הפיכה למנהל/ת",
+    "promoteSuccessToast": "{{username}} הפך/ה למנהל/ת",
+    "promoteErrorToast": "לא ניתן להפוך את המשתמש הזה למנהל/ת.",
+    "demote": "הסרה מתפקיד ניהול",
+    "demoteSuccessToast": "{{username}} הוסר/ה מתפקיד ניהול",
+    "demoteErrorToast": "לא ניתן להסיר את המשתמש הזה מתפקיד ניהול."
+  },
+  "browse": {
+    "title": "קהילות",
+    "intro": "עיינו בקהילות נושאיות והצטרפו אליהן, או התחילו קהילה משלכם.",
+    "searchPlaceholder": "חיפוש קהילות…",
+    "noneFoundTitle": "לא נמצאו קהילות",
+    "noneFoundTrySearch": "נסו חיפוש אחר.",
+    "noneFoundBeFirst": "היו הראשונים ליצור אחת."
+  },
+  "join": {
+    "join": "הצטרפות",
+    "leave": "עזיבה",
+    "errorJoin": "לא ניתן להצטרף לקהילה",
+    "errorLeave": "לא ניתן לעזוב את הקהילה"
+  }
+}

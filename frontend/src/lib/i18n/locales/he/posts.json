@@ -1,0 +1,65 @@
+{
+  "sorts": {
+    "hot": "חם",
+    "new": "חדש",
+    "top": "מובילים",
+    "controversial": "שנוי במחלוקת",
+    "pinned": "מוצמדים"
+  },
+  "create": {
+    "title": "פרסום ל-c/{{name}}",
+    "titleLabel": "כותרת",
+    "titlePlaceholder": "כותרת",
+    "bodyLabel": "תוכן",
+    "bodyPlaceholder": "כתבו את הפוסט שלכם… (תמיכה ב-markdown בסיסי)",
+    "addPollLabel": "הוספת סקר",
+    "posting": "מפרסם…",
+    "submit": "פרסום",
+    "successToast": "הפוסט פורסם",
+    "errorToast": "לא ניתן ליצור את הפוסט. נסו שוב.",
+    "flairLabel": "תווית",
+    "flairPlaceholder": "בחרו תווית"
+  },
+  "imageFields": {
+    "sectionLabel": "תמונות",
+    "removeImage": "הסרת תמונה {{number}}",
+    "tooManyImagesError": "אפשר לצרף עד {{count}} תמונות.",
+    "imageTooLargeError": "התמונה גדולה מדי (מקסימום {{count}} מגה-בייט)."
+  },
+  "editForm": {
+    "save": "שמירה",
+    "cancel": "ביטול",
+    "successToast": "הפוסט עודכן",
+    "errorToast": "לא ניתן לעדכן את הפוסט.",
+    "imagesLockedHint": "לא ניתן לערוך תמונות לאחר הפרסום.",
+    "pollLockedHint": "לא ניתן לערוך את אפשרויות הסקר לאחר הפרסום."
+  },
+  "pollFields": {
+    "optionsLabel": "אפשרויות הסקר",
+    "optionPlaceholder": "אפשרות {{number}}",
+    "removeOption": "הסרת אפשרות {{number}}",
+    "addOption": "הוספת אפשרות"
+  },
+  "card": {
+    "pinned": "מוצמד",
+    "locked": "נעול",
+    "postedByPrefix": "פורסם על ידי",
+    "postedByCommunityPrefix": "ב-",
+    "edited": "נערך",
+    "commentCount_one": "{{count}} תגובה",
+    "commentCount_two": "{{count}} תגובות",
+    "commentCount_other": "{{count}} תגובות"
+  },
+  "list": {
+    "noPostsYetTitle": "אין עדיין פוסטים",
+    "noPostsYetDescription": "היו הראשונים לפרסם בקהילה הזו."
+  },
+  "detail": {
+    "edit": "עריכה",
+    "delete": "מחיקה",
+    "deleteConfirm": "למחוק את הפוסט הזה?",
+    "deleteSuccessToast": "הפוסט נמחק",
+    "deleteErrorToast": "לא ניתן למחוק את הפוסט.",
+    "pollVoteErrorToast": "לא ניתן לרשום את ההצבעה שלך."
+  }
+}

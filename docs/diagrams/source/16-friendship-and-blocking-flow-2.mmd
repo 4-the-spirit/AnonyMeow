@@ -1,0 +1,18 @@
+sequenceDiagram
+    actor U as User A
+    participant EP as BlockEndpoints
+    participant BS as BlockService
+    participant DB as AppDbContext / PostgreSQL
+
+    U->>EP: POST /api/users/{username}/block
+    EP->>BS: BlockAsync(A, B)
+
+    alt A == B
+        BS-->>EP: throws SelfBlockException
+        EP-->>U: 400
+    else different users
+        BS->>DB: upsert UserBlock(A, B) — idempotent
+        EP-->>U: 200
+    end
+
+    Note over BS,DB: Existing conversations are NOT deleted.<br/>ConversationService/MessageService re-check<br/>IsBlockedEitherWayAsync on next create/send<br/>(see 15-messaging-flow.md)

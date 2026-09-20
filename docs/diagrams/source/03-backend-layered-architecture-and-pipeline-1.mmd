@@ -1,0 +1,15 @@
+flowchart TD
+    Req(["Incoming HTTP Request"]) --> A["Dev only: MapOpenApi / DevAuthEndpoints"]
+    A --> B["UseExceptionHandler<br/>(GlobalExceptionHandler)"]
+    B --> C["UseHsts (non-Development only)"]
+    C --> D["UseHttpsRedirection"]
+    D --> E["UseResponseCompression<br/>(Brotli / Gzip)"]
+    E --> F["SecurityHeadersMiddleware<br/>(CSP, X-Frame-Options, X-Content-Type-Options, ...)"]
+    F --> G["UseCors (FrontendDev policy)"]
+    G --> H["UseAuthentication<br/>(JWT Bearer)"]
+    H --> I["RequestLoggingEnrichmentMiddleware<br/>(after auth so oid is known,<br/>before authz so 401/403 still get logged)"]
+    I --> J["UseAuthorization<br/>(fallback policy: ProfileCompletionRequirement)"]
+    J --> K["UseRateLimiter<br/>(partitioned by user id / IP;<br/>named per-action policies)"]
+    K --> L["Endpoint routing<br/>(19 MapXEndpoints groups)"]
+    L --> M["/hubs/notifications (SignalR)"]
+    L --> N(["Endpoint handler executes"])

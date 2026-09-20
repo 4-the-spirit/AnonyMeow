@@ -1,0 +1,21 @@
+{
+  "types": {
+    "Reply": "Reply",
+    "Mention": "Mention",
+    "ModAction": "Moderation",
+    "FriendRequest": "Friend request"
+  },
+  "page": {
+    "title": "Notifications",
+    "markAllRead": "Mark all read",
+    "markAllReadSuccessToast": "All notifications marked read",
+    "markAllReadErrorToast": "Could not mark all notifications read.",
+    "showingUnreadOnly": "Showing unread only",
+    "showUnreadOnly": "Show unread only",
+    "noUnread": "No unread notifications",
+    "noneYet": "No notifications yet"
+  },
+  "item": {
+    "openErrorToast": "Could not open this notification."
+  }
+}

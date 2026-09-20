@@ -1,0 +1,41 @@
+{
+  "pageTitle": "Platform admin",
+  "adminsOnlyTitle": "Platform admins only",
+  "adminsOnlyDescription": "Your account doesn't have platform admin access.",
+  "tabs": {
+    "reports": "Reports",
+    "spamFlags": "Spam flags",
+    "restrictions": "Restrictions",
+    "auditLog": "Audit log"
+  },
+  "reports": {
+    "none": "No reports here"
+  },
+  "spamFlags": {
+    "none": "No spam flags here",
+    "reasonRateLimitExceeded": "Rate limit exceeded",
+    "reasonDuplicateContent": "Duplicate content",
+    "reasonLinkSpam": "Link spam"
+  },
+  "auditLog": {
+    "none": "No audit log entries yet"
+  },
+  "restrictions": {
+    "restrictTitle": "Restrict a user",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "username",
+    "typeLabel": "Restriction type",
+    "typePostingRestricted": "Posting restricted",
+    "typeFullSuspension": "Full suspension",
+    "reasonLabel": "Reason",
+    "reasonPlaceholder": "Why is this user being restricted?",
+    "endAtLabel": "Ends at (optional, leave blank for indefinite)",
+    "restrictSubmit": "Restrict user",
+    "restrictSuccessToast": "{{username}} restricted",
+    "restrictErrorToast": "Could not restrict this user.",
+    "liftTitle": "Lift a restriction",
+    "liftSubmit": "Lift restriction",
+    "liftSuccessToast": "Restriction on {{username}} lifted",
+    "liftErrorToast": "Could not lift this user's restriction."
+  }
+}

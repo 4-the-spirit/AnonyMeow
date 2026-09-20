@@ -1,0 +1,13 @@
+{
+  "pageTitle": "מגמות",
+  "pageTitleCommunity": "מגמות בקהילת c/{{community}}",
+  "windows": {
+    "day": "היום",
+    "week": "השבוע"
+  },
+  "emptyTitle": "אין עדיין תוכן מדובר",
+  "emptyDescription": "בדקו שוב כשתהיה יותר פעילות.",
+  "recommended": {
+    "title": "קהילות מומלצות"
+  }
+}

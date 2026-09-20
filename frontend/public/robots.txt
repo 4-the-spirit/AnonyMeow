@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anonymeow.com/sitemap.xml

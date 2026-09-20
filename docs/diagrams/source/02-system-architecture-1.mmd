@@ -1,0 +1,34 @@
+flowchart TB
+    subgraph Clients["Clients"]
+        Anon["Anonymous Visitor"]
+        User["Registered User"]
+    end
+
+    subgraph Frontend["Frontend — React SPA (Vite)"]
+        SPA["React App"]
+    end
+
+    subgraph Backend["Backend — ASP.NET Core Minimal API Monolith (Azure App Service)"]
+        API["REST API<br/>/api/* — 19 endpoint groups"]
+        Hub["NotificationHub (SignalR)<br/>/hubs/notifications"]
+    end
+
+    subgraph Data["Data & Storage"]
+        PG[("PostgreSQL<br/>via EF Core / Npgsql")]
+        Blob[("Azure Blob Storage<br/>post images")]
+    end
+
+    subgraph Identity["Identity Provider"]
+        CIAM["Microsoft Entra External ID (CIAM)<br/>Native Auth REST API"]
+    end
+
+    Anon --> SPA
+    User --> SPA
+    SPA -->|"HTTPS REST, Bearer JWT"| API
+    SPA <-->|"WebSocket, JWT via query string"| Hub
+    SPA -->|"direct PUT via SAS URL"| Blob
+
+    API --> PG
+    API -->|"issues short-lived SAS tokens for"| Blob
+    API -->|"server-to-server: sign-up/in,<br/>refresh, password reset"| CIAM
+    API -->|"persist Notification/Message,<br/>then push"| Hub

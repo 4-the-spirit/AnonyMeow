@@ -1,0 +1,22 @@
+{
+  "searchBar": {
+    "placeholder": "Search AnonyMeow"
+  },
+  "pageTitle": "Search results for \"{{query}}\"",
+  "noQueryTitle": "Enter a search term above",
+  "tabs": {
+    "all": "All",
+    "posts": "Posts",
+    "comments": "Comments",
+    "communities": "Communities"
+  },
+  "sections": {
+    "posts": "Posts ({{count}})",
+    "comments": "Comments ({{count}})",
+    "communities": "Communities ({{count}})"
+  },
+  "results": {
+    "commentScore": "{{score}} points",
+    "noneFound": "No results for \"{{query}}\""
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sorts": {
+    "hot": "Hot",
+    "new": "New",
+    "top": "Top",
+    "controversial": "Controversial",
+    "pinned": "Pinned"
+  },
+  "create": {
+    "title": "Submit to c/{{name}}",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "bodyLabel": "Body",
+    "bodyPlaceholder": "Write your post… (supports basic markdown)",
+    "addPollLabel": "Add a poll",
+    "posting": "Posting…",
+    "submit": "Post",
+    "successToast": "Post created",
+    "errorToast": "Could not create the post. Please try again.",
+    "flairLabel": "Tag",
+    "flairPlaceholder": "Choose a tag"
+  },
+  "imageFields": {
+    "sectionLabel": "Images",
+    "removeImage": "Remove image {{number}}",
+    "tooManyImagesError": "You can attach up to {{count}} images.",
+    "imageTooLargeError": "That image is too large (max {{count}} MB)."
+  },
+  "editForm": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "successToast": "Post updated",
+    "errorToast": "Could not update the post.",
+    "imagesLockedHint": "Images can't be edited after posting.",
+    "pollLockedHint": "Poll options can't be edited after posting."
+  },
+  "pollFields": {
+    "optionsLabel": "Poll options",
+    "optionPlaceholder": "Option {{number}}",
+    "removeOption": "Remove option {{number}}",
+    "addOption": "Add option"
+  },
+  "card": {
+    "pinned": "Pinned",
+    "locked": "Locked",
+    "postedByPrefix": "Posted by",
+    "postedByCommunityPrefix": "in",
+    "edited": "edited",
+    "commentCount_one": "{{count}} comment",
+    "commentCount_other": "{{count}} comments"
+  },
+  "list": {
+    "noPostsYetTitle": "No posts yet",
+    "noPostsYetDescription": "Be the first to post in this community."
+  },
+  "detail": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this post?",
+    "deleteSuccessToast": "Post deleted",
+    "deleteErrorToast": "Could not delete the post.",
+    "pollVoteErrorToast": "Could not cast your poll vote."
+  }
+}

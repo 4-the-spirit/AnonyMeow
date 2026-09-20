@@ -1,0 +1,123 @@
+erDiagram
+    AppUser {
+        guid Id PK
+        string B2CObjectId
+        string Username
+        string DisplayName
+        int Karma
+        bool IsPlatformAdmin
+    }
+    Community {
+        guid Id PK
+        string Name
+        guid CreatedByUserId FK
+    }
+    CommunityMembership {
+        guid CommunityId PK
+        guid AppUserId PK
+        string Role
+    }
+    CommunityBan {
+        guid CommunityId PK
+        guid AppUserId PK
+        guid BannedByModId FK
+    }
+    CommunityRule {
+        guid Id PK
+        guid CommunityId FK
+        string Title
+        int Order
+    }
+    Flair {
+        guid Id PK
+        guid CommunityId FK
+        string Name
+        bool IsDefault
+    }
+    Post {
+        guid Id PK
+        guid CommunityId FK
+        guid AuthorId FK
+        guid FlairId FK
+        string Title
+        bool IsPinned
+        bool IsLocked
+        bool IsRemoved
+    }
+    PostImage {
+        guid Id PK
+        guid PostId FK
+        string Url
+        int Position
+    }
+    Comment {
+        guid Id PK
+        guid PostId FK
+        guid ParentCommentId FK
+        guid AuthorId FK
+        bool IsRemoved
+    }
+    Vote {
+        guid Id PK
+        string TargetType
+        guid TargetId
+        guid VoterId FK
+        int Value
+    }
+    Reaction {
+        guid Id PK
+        string TargetType
+        guid TargetId
+        guid AppUserId FK
+        string Emoji
+    }
+    PollOption {
+        guid Id PK
+        guid PostId FK
+        string Text
+    }
+    PollVote {
+        guid Id PK
+        guid PostId FK
+        guid AppUserId FK
+        guid PollOptionId FK
+    }
+    SavedPost {
+        guid AppUserId PK
+        guid PostId PK
+    }
+    SavedComment {
+        guid AppUserId PK
+        guid CommentId PK
+    }
+
+    AppUser ||--o{ Community : creates
+    AppUser ||--o{ CommunityMembership : "is member via"
+    Community ||--o{ CommunityMembership : has
+    AppUser ||--o{ CommunityBan : "banned (target)"
+    AppUser ||--o{ CommunityBan : "issued by (mod)"
+    Community ||--o{ CommunityBan : enforces
+    Community ||--o{ CommunityRule : defines
+    Community ||--o{ Flair : defines
+    AppUser ||--o{ Flair : "created by (mod)"
+    Community ||--o{ Post : contains
+    AppUser ||--o{ Post : authors
+    Flair ||--o{ Post : tags
+    Post ||--o{ PostImage : has
+    Post ||--o{ Comment : has
+    AppUser ||--o{ Comment : authors
+    Comment ||--o{ Comment : "replies to (self)"
+    AppUser ||--o{ Vote : casts
+    Post ||--o{ Vote : "target (polymorphic)"
+    Comment ||--o{ Vote : "target (polymorphic)"
+    AppUser ||--o{ Reaction : adds
+    Post ||--o{ Reaction : "target (polymorphic)"
+    Comment ||--o{ Reaction : "target (polymorphic)"
+    Post ||--o{ PollOption : offers
+    PollOption ||--o{ PollVote : receives
+    AppUser ||--o{ PollVote : casts
+    Post ||--o{ PollVote : "for"
+    AppUser ||--o{ SavedPost : saves
+    Post ||--o{ SavedPost : "saved by"
+    AppUser ||--o{ SavedComment : saves
+    Comment ||--o{ SavedComment : "saved by"

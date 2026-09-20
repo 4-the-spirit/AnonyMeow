@@ -1,0 +1,21 @@
+{
+  "name": "AnonyMeow — Anonymous Community Discussion",
+  "short_name": "AnonyMeow",
+  "description": "An anonymous community discussion platform — join communities, post, comment, and vote without a public identity.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7e14ff",
+  "icons": [
+    {
+      "src": "/emoji/cat-face.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

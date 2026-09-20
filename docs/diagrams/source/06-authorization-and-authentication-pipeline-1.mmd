@@ -1,0 +1,23 @@
+flowchart TD
+    Start(["Request with Authorization: Bearer &lt;JWT&gt;"]) --> Valid{"JWT valid?<br/>(signature, issuer, audience)"}
+    Valid -- "No" --> R401(["401 Unauthorized"])
+    Valid -- "Yes" --> JIT["CurrentUserAccessor:<br/>look up AppUser by 'oid' claim,<br/>JIT-create on first request"]
+    JIT --> PolicyCheck{"Which policy applies<br/>to this endpoint?"}
+
+    PolicyCheck -- "AllowAnonymous" --> Handler(["Endpoint handler"])
+
+    PolicyCheck -- "AuthenticatedOnly" --> AuthOnly{"IsAuthenticated?"}
+    AuthOnly -- No --> R401
+    AuthOnly -- Yes --> Handler
+
+    PolicyCheck -- "(default fallback policy)" --> Profile{"ProfileCompletionRequirement:<br/>Username set?"}
+    Profile -- No --> R403a(["403 Forbidden<br/>must call complete-profile first"])
+    Profile -- Yes --> Handler
+
+    PolicyCheck -- "PlatformAdmin" --> Admin{"AppUser.IsPlatformAdmin?"}
+    Admin -- No --> R403b(["403 Forbidden"])
+    Admin -- Yes --> Handler
+
+    PolicyCheck -- "CommunityModerator<br/>(resource-based, called inside handler)" --> Mod{"CommunityMembership row<br/>with Role = Moderator<br/>for THIS community?"}
+    Mod -- No --> R403c(["403 Forbidden"])
+    Mod -- Yes --> Handler
